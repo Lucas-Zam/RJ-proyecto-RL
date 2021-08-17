@@ -1,0 +1,21 @@
+.tarjeta {
+    background-color: rgb(211, 211, 211);
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media screen and (max-width: 992px) {
+	/*se hace si tiene 992px o menos*/
+	p {font-size: 0.875rem;}
+}
+@media screen and (max-width: 768px) {
+	/*se hace si tiene 768px o menos*/
+	p {font-size: 0.875rem;}
+}
+@media screen and (max-width: 576px) {
+	/*se hace si tiene 576px o menos*/
+	p {font-size: 0.75rem;}
+}
+@media screen and (max-width: 341px) {
+	/*se hace si tiene 341px o menos*/
+	p {font-size: 0.625rem;}
+}

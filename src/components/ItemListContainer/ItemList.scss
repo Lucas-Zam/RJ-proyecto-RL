@@ -1,0 +1,53 @@
+.titulo {
+    padding-top: 1.25rem;
+}
+
+.contenido {
+	padding: 1.25rem;
+	gap: 1.25rem; 
+	div{
+        p{
+            padding-left: 0.3125rem;
+        }
+		// border: 1px solid black;
+		// &:hover{
+		// 	background-color: lightblue;
+		// 	box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.8), 0 6px 20px 0 rgba(0,0,0,0.2);
+		// 	transform: scale(1.05);
+		// 	// cursor: pointer;
+		// }
+		// &:active{
+		// 	background-color: lightblue;
+		// 	box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.8), 0 6px 20px 0 rgba(0,0,0,0.2);
+		// 	transform: scale(1.05);
+		// 	// cursor: -webkit-grabbing;
+		// }
+	}
+}
+
+@media screen and (max-width: 992px) {
+	/*se hace si tiene 992px o menos*/
+    .contenido {gap: 0.9375rem;}
+	.titulo {font-size: 0.9375rem;}
+}
+@media screen and (max-width: 768px) {
+	/*se hace si tiene 768px o menos*/
+    .contenido {gap: 0.625rem;}
+	.titulo {font-size: 0.875rem;}
+}
+@media screen and (max-width: 576px) {
+	/*se hace si tiene 576px o menos*/
+    .contenido {
+        gap: 0.3125rem;
+        padding: 1.25rem 0.3125rem;
+    }
+	.titulo {font-size: 0.75rem;}
+}
+@media screen and (max-width: 341px) {
+	/*se hace si tiene 341px o menos*/
+    .contenido {
+        gap: 0.1875rem;
+        padding: 1.25rem 0.1875rem;
+    }
+	.titulo {font-size: 0.625rem;}
+}

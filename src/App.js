@@ -1,16 +1,25 @@
 import { NavBar } from "./components/NavBar/NavBar";
+import './styles/styles.scss'
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import "./styles/styles.css"
-
+// import { Clock } from "./components/Clock/Clock";
+// import { ClickTracker } from "./components/ClickTracker/ClickTracker";
+// import { useState } from "react";
 
 function App() {
-  return (
-    <div>
 
+
+  // const [montar, setMontar] = useState(true)
+
+  return (
+    <>
       <NavBar/>
-      <ItemListContainer greeting="Hola Coders"/>
+      <ItemListContainer/>
       
-    </div>
+    {/* 
+      <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
+      { montar && <ClickTracker/> } */}    
+    </>
+   
   );
 }
 

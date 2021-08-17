@@ -1,25 +1,39 @@
 import React from 'react'
-import "./NavBar.css"
-import { CartWidget } from '../CartWidget/CartWidget';
+import { CartWidget } from './CartWidget/CartWidget'
+import './NavBar.scss'
+import logoRL from './logo-RL.png';
+
+// import { CartWidget } from "./components/NavBar/CartWidget/CartWidget";
 
 export const NavBar = () => {
+
     return (
         <header className="encabezado">
-            
+
                 <div className="boxLogo">
-                    <h1>LOGO</h1>
+                    <div className="img-tip">
+                        <img src={logoRL} className="logoRL" alt="logo" width="10"/>
+                    </div>
+                    <div className="p-tip">
+                        <p className="repLucas"><b>REPUESTOS LUCAS</b></p>
+                        <p className="repAlter">Repuestos alternativos</p>
+                        <p className="repAlter">para el automotor marca Chevrolet</p>
+                    </div>
                 </div>
             
                 <CartWidget/>
             
                 <nav className="boxNav">
-                    <a href= "#aa1">Página1</a>
-                    <a href= "#aa2">Página2</a>
-                    <a href= "#aa3">Página3</a>
-                    <a href= "#aa4">Página4</a>
-                    <a href= "#aa5">Página5</a>
+                    <ul className="ulNav">
+                        <li><div><a href= "#aa1">Enlace1</a></div></li>
+                        <li><div><a href= "#aa2">Enlace2</a></div></li>
+                        <li><div><a href= "#aa3">Enlace3</a></div></li>
+                        <li><div><a href= "#aa4">Enlace4</a></div></li>
+                        <li><div><a href= "#aa5">Enlace5</a></div></li>
+                    </ul>
                 </nav>
 
         </header>
     )
+  
 }
