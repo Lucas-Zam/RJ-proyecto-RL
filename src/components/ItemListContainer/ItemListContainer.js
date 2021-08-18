@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from './ItemList'
 
+
+// solicita el archivo de stock y cuando lo tiene
+// lo pasa al componente Itemlist
 export const ItemListContainer = () => {
 
     // estado Hook: const [valor,fc modificadora] = useState (valor inicial)
@@ -33,6 +36,7 @@ export const ItemListContainer = () => {
             <h2>Cargando...</h2>// cuando loading está en true
             : 
             <ItemList productos={data}/>// cuando loading está en false
+                                        // paso el stock al componente ItemList
             }
         </>
     )

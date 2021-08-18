@@ -2,9 +2,11 @@ import React from 'react'
 import { Item } from './Item'
 import "./ItemList.scss"
 
-export const ItemList = ( {productos = []} ) => {
 
 // recibe el arreglo productos y lo muestra mapeandolo correctamente
+// hacia el componente Item
+export const ItemList = ( {productos = []} ) => {
+
     return (
         <section>
             <h2 className="texto-centrado titulo">Productos</h2>
