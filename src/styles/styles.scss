@@ -20,6 +20,62 @@ img {
 .enfasis700 {font-weight: 700;}
 .enfasis600 {font-weight: 600;}
 .enfasis500 {font-weight: 500;}
+.sombra {box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+
+.btn {
+	font-family: roboto, nunito, sans-serif;
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 5px 12px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
+}
+.btn-primary:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0062cc;
+	cursor: pointer;
+}
+.btn-block {
+	display: block;
+	margin: 10px auto;
+	width: 90%;
+}
+.btn-danger {
+	color: #fff;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+.btn-danger:hover {
+	color: #fff;
+	background-color: #c82333;
+	border-color: #bd2130;
+	cursor: pointer;
+}
+.btn-success {
+	color: #fff;
+	background-color: #28a745;
+	border-color: #28a745;
+}  
+.btn-success:hover {
+	color: #fff;
+	background-color: #218838;
+	border-color: #1e7e34;
+	cursor: pointer;
+}
 
 .grid {
 	display: grid;

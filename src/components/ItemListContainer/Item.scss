@@ -3,6 +3,11 @@
     box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.encuadre1{
+	text-align: right;
+	margin-top: -15px
+}
+
 @media screen and (max-width: 992px) {
 	/*se hace si tiene 992px o menos*/
 	p {font-size: 0.875rem;}

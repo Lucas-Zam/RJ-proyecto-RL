@@ -1,5 +1,6 @@
 import React from 'react'
 import { CartWidget } from './CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
 import './NavBar.scss'
 import logoRL from './logo-RL.png';
 
@@ -10,7 +11,7 @@ export const NavBar = () => {
     return (
         <header className="encabezado">
 
-                <div className="boxLogo">
+                <Link className="boxLogo" to={"/"}>
                     <div className="img-tip">
                         <img src={logoRL} className="logoRL" alt="logo" width="10"/>
                     </div>
@@ -19,17 +20,21 @@ export const NavBar = () => {
                         <p className="repAlter">Repuestos alternativos</p>
                         <p className="repAlter">para el automotor marca Chevrolet</p>
                     </div>
-                </div>
+                </Link>
             
                 <CartWidget/>
-            
+
                 <nav className="boxNav">
                     <ul className="ulNav">
-                        <li><div><a href= "#aa1">Enlace1</a></div></li>
-                        <li><div><a href= "#aa2">Enlace2</a></div></li>
-                        <li><div><a href= "#aa3">Enlace3</a></div></li>
-                        <li><div><a href= "#aa4">Enlace4</a></div></li>
-                        <li><div><a href= "#aa5">Enlace5</a></div></li>
+                        <Link className="linkNav" to={"/"}><div className="linkNava">Inicio</div></Link>
+                        <Link className="linkNav" to={"/category/bomba"}><div className="linkNava">Bomba</div></Link>
+                        <Link className="linkNav" to={"/category/calefaccion"}><div className="linkNava">Calefacción</div></Link>
+                        <Link className="linkNav" to={"/category/ciguenal"}><div className="linkNava">Cigüeñal</div></Link>
+                        <Link className="linkNav" to={"/category/cilindro"}><div className="linkNava">Cilindro</div></Link>
+                        <Link className="linkNav" to={"/category/direccion"}><div className="linkNava">Dirección</div></Link>
+                        <Link className="linkNav" to={"/category/distribucion"}><div className="linkNava">Distribución</div></Link>
+                        <Link className="linkNav" to={"/category/termostato"}><div className="linkNava">Termostato</div></Link>
+                        <Link className="linkNav" to={"/category/ventilador"}><div className="linkNava">Ventilador</div></Link>
                     </ul>
                 </nav>
 

@@ -1,19 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./Item.scss"
 
 // representa a cada tarjeta de producto en si mismo
 
 // modo 1 ----------------------------------------------
-export const Item = ( {img,codigo,desc,precio,auto} ) => {
+export const Item = ( {id,img,codigo,desc,precio,categoria,auto} ) => {
 
+    // console.log(id);
+    // console.log(codigo);
+    // console.log(desc);
+    // debugger;
 
     return (
         <div className="tarjeta">
-            <img src={"./img/"+img} alt={codigo} width="400"/>
+            <img src={"../img/"+img} alt={codigo} width="400"/>
+            <div className="encuadre1">
+                <Link to={`/detail/${id}`} className="btn btn-primary sombra">Ver más</Link>
+            </div>
             <p>{"Cód: "}{codigo}</p>
             <p>{desc}</p>
-            <p>{"Auto: "}{auto}</p>
+            {/* <p>{"Categoría: "}{categoria}</p> */}
+            {/* <p>{"Auto: "}{auto}</p> */}
             <p className="texto-centrado enfasis600">{"$ "}{precio}</p>
+            
         </div>
     )
 }

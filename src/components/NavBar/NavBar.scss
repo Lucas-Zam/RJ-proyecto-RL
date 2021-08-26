@@ -51,16 +51,16 @@
             justify-content: center;
             align-items: center;
             padding: 3px;
-            li {
+            .linkNav {
                 list-style: none;
-                a {
+                .linkNava {
                     text-align: center;
                     text-decoration: none;
                     font-size: 2.5vmin;
                     padding: 0 0.9375rem;
                     color: rgb(110, 110, 110);
                 }
-                a:hover {
+                .linkNava:hover {
                     font-weight: 500;
                     color: rgb(77, 77, 77);
                     border-radius: 4px;

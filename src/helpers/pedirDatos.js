@@ -8,7 +8,7 @@ export const pedirDatos = () => {
     return new Promise((resolve, reject) => {
 
             setTimeout(()=>{
-                // resolve(stock);// devuelvo el stock como está guardado
+                //resolve(stock);// devuelvo el stock como está guardado
 
                 // ordenar stock por código
                 let mapped = stock.map(function(el,i) {
@@ -24,7 +24,7 @@ export const pedirDatos = () => {
                 });
 
                 resolve(stockOrdenado);// devuelvo el stock ordenado por código
-
+                
             }, 2000)
 
     })
