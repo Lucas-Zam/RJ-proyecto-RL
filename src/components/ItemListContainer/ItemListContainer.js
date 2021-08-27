@@ -15,6 +15,7 @@ export const ItemListContainer = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
+    console.log(data);
 
     // este useEffect se dispara en el montaje
     useEffect( ()=> {
@@ -27,11 +28,11 @@ export const ItemListContainer = () => {
             .then(respuesta => {
                 if (catId) {
                     const arrayFiltrado = respuesta.filter( prod => prod.categoria === catId.toLowerCase())
-                    console.log( arrayFiltrado )
+                    // console.log( arrayFiltrado )
                     setData( arrayFiltrado )
                 }else{
                     setData(respuesta)
-                    console.log(respuesta)
+                    // console.log(respuesta)
                 }
             })
             .catch(err => console.log(err))
@@ -46,9 +47,15 @@ export const ItemListContainer = () => {
     return (
         <>
             {loading ? 
-            <h2>Cargando...</h2>// cuando loading está en true
-            : 
-            <ItemList productos={data}/> 
+            <p className="texto-centrado margen10">Cargando...</p>// cuando loading está en true
+            :
+            (data.length ?
+                <ItemList productos={data}/> 
+            :
+                <h1 className="texto-centrado margen40">Producto no encontrado</h1>
+            )
+
+            // <ItemList productos={data}/> 
             // cuando loading está en false
             // paso el stock al componente ItemList
             }

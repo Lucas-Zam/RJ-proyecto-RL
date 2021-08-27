@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+
         <NavBar/>
 
         <Switch>
@@ -30,7 +31,7 @@ function App() {
           <Route exact path="/detail/:itemId">
             <ItemDetailContainer/>
           </Route>
-         
+
           <Route path="*">
               {/* <h1 className="texto-centrado">404 page not found</h1> */}
               <Redirect to ="/"/>          

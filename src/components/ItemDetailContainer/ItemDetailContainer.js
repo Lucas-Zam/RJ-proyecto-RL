@@ -26,11 +26,18 @@ export const ItemDetailContainer = () => {
 
 
     return (
-        <div>
-            {loading 
-                ? <h2>Cargando...</h2>
-                : <ItemDetail {...item}/>
-            }
-        </div>
+        <>
+            <div>
+                {loading ? 
+                    <p className="texto-centrado margen10">Cargando...</p>// cuando loading está en true
+                    :
+                    (item ?
+                        <ItemDetail {...item}/>
+                    :
+                        <h1 className="texto-centrado margen40">Producto no encontrado</h1>
+                    )
+                }
+            </div>
+        </>
     )
 }
