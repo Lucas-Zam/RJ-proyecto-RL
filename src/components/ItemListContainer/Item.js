@@ -5,7 +5,7 @@ import "./Item.scss"
 // representa a cada tarjeta de producto en si mismo
 
 // modo 1 ----------------------------------------------
-export const Item = ( {id,img,codigo,desc,precio,categoria,auto} ) => {
+export const Item = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
 
     // console.log(id);
     // console.log(codigo);

@@ -1,12 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { CartWidget } from './CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import './NavBar.scss'
 import logoRL from './logo-RL.png';
+import { pedirCategoria } from '../../helpers/pedirCategoria';
+import { NavList } from './NavList'
+
 
 // import { CartWidget } from "./components/NavBar/CartWidget/CartWidget";
 
 export const NavBar = () => {
+
+    const [categoria, setCategoria] = useState([])
+    const [load, setLoad] = useState(false)
+
+    useEffect( ()=> {
+
+        setLoad(true);
+        
+        pedirCategoria()
+            .then(respu => {
+                setCategoria(respu)
+            })
+            .catch(err => console.log(err))
+            .finally(()=> {
+                setLoad(false); // al ponerlo en false no aparecerá el Cargando... 
+            })
+    }, [])
+
 
     return (
         <header className="encabezado">
@@ -24,19 +45,17 @@ export const NavBar = () => {
             
                 <CartWidget/>
 
-                <nav className="boxNav">
-                    <ul className="ulNav">
-                        <Link className="linkNav" to={"/"}><div className="linkNava">Inicio</div></Link>
-                        <Link className="linkNav" to={"/category/bomba"}><div className="linkNava">Bomba</div></Link>
-                        <Link className="linkNav" to={"/category/calefaccion"}><div className="linkNava">Calefacción</div></Link>
-                        <Link className="linkNav" to={"/category/ciguenal"}><div className="linkNava">Cigüeñal</div></Link>
-                        <Link className="linkNav" to={"/category/cilindro"}><div className="linkNava">Cilindro</div></Link>
-                        <Link className="linkNav" to={"/category/direccion"}><div className="linkNava">Dirección</div></Link>
-                        <Link className="linkNav" to={"/category/distribucion"}><div className="linkNava">Distribución</div></Link>
-                        <Link className="linkNav" to={"/category/termostato"}><div className="linkNava">Termostato</div></Link>
-                        <Link className="linkNav" to={"/category/ventilador"}><div className="linkNava">Ventilador</div></Link>
-                    </ul>
-                </nav>
+                {load ? 
+                    <p className="boxNav texto-centrado">Cargando Nav...</p>// cuando load está en true
+                : 
+                    (<nav className="boxNav">
+                        <ul className="ulNav">
+
+                            <NavList categorias={categoria}/>
+
+                        </ul>
+                    </nav>)
+                }
 
         </header>
     )

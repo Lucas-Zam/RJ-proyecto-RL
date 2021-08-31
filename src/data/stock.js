@@ -10,6 +10,8 @@ export const stock = [
         rubro: "GRICALAF",
         auto: "CORSA",
         marca: "",
+        catparanav: "Calefacción",
+        stock: 10,
         cod_original: "12380318"
     },
     {
@@ -22,6 +24,8 @@ export const stock = [
         rubro: "GRICALAF",
         auto: "CORSA VECTRA",
         marca: "",
+        catparanav: "Calefacción",
+        stock: 10,
         cod_original: "90457649 905669"
     },
     {
@@ -34,6 +38,8 @@ export const stock = [
         rubro: "GRICALAF",
         auto: "CORSA 2",
         marca: "",
+        catparanav: "Calefacción",
+        stock: 10,
         cod_original: "93369686"
     },
     {
@@ -46,6 +52,8 @@ export const stock = [
         rubro: "GRICALAF",
         auto: "MERIVA",
         marca: "",
+        catparanav: "Calefacción",
+        stock: 10,
         cod_original: "93306264"
     },
     {
@@ -58,6 +66,8 @@ export const stock = [
         rubro: "TAPDIST",
         auto: "CORSA",
         marca: "",
+        catparanav: "Distribución",
+        stock: 10,
         cod_original: "93328876"
     },
     {
@@ -70,6 +80,8 @@ export const stock = [
         rubro: "ANTBOMB",
         auto: "CORSA",
         marca: "",
+        catparanav: "Cilindro",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -82,6 +94,8 @@ export const stock = [
         rubro: "TAPDIST",
         auto: "CORSA 2 MERIVA",
         marca: "",
+        catparanav: "Distribución",
+        stock: 10,
         cod_original: "93388682 / 83 / 84"
     },
     {
@@ -94,6 +108,8 @@ export const stock = [
         rubro: "POLBOM",
         auto: "62 / 78",
         marca: "",
+        catparanav: "Bomba",
+        stock: 10,
         cod_original: "3788472"
     },
     {
@@ -106,6 +122,8 @@ export const stock = [
         rubro: "POLBOM",
         auto: "CORSA MERIVA",
         marca: "",
+        catparanav: "Bomba",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -118,6 +136,8 @@ export const stock = [
         rubro: "ACOPLEDIST",
         auto: "VARIOS",
         marca: "",
+        catparanav: "Ventilación",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -130,6 +150,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "C 20",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -142,6 +164,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "OPEL",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -154,6 +178,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "400 CHEVY",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -166,6 +192,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "CHEVY",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -178,6 +206,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "SILVER.",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "2641885"
     },
     {
@@ -190,6 +220,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "VECTRA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "99045969"
     },
     {
@@ -202,6 +234,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "ISUZU",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "94419457"
     },
     {
@@ -214,6 +248,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "CORSA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "97251975"
     },
     {
@@ -226,6 +262,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "ISUZU",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "94172420"
     },
     {
@@ -238,6 +276,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "ISUZU",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "97139712"
     },
     {
@@ -250,6 +290,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "ISUZU",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -262,6 +304,8 @@ export const stock = [
         rubro: "CONEXIOND",
         auto: "CORSA",
         marca: "",
+        catparanav: "Distribución",
+        stock: 10,
         cod_original: "97185514"
     },
 
@@ -275,6 +319,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "SPARK",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "96988257"
     },
     {
@@ -287,6 +333,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "CRUZE TRACKER",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "96984104"
     },
     {
@@ -299,6 +347,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "S-10 BLAZER",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "93225280 932587"
     },
     {
@@ -311,6 +361,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "AVEO",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "96407677"
     },
     {
@@ -323,6 +375,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "CRUZE",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "528074526"
     },
     {
@@ -335,6 +389,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "CRUZE TRACKER SONIC",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "25192228"
     },    
     {
@@ -347,6 +403,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "ASTRA VECTRA S-10",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "52287416"
     },
     {
@@ -359,6 +417,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "CRUZE TRACKER",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "96817255"
     },
     {
@@ -371,6 +431,8 @@ export const stock = [
         rubro: "GUIADIRE",
         auto: "38 / 39",
         marca: "",
+        catparanav: "Dirección",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -383,6 +445,8 @@ export const stock = [
         rubro: "GUIADIRE",
         auto: "40 / 54",
         marca: "",
+        catparanav: "Dirección",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -395,6 +459,8 @@ export const stock = [
         rubro: "GUIADIRE",
         auto: "400 IKA",
         marca: "",
+        catparanav: "Dirección",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -407,6 +473,8 @@ export const stock = [
         rubro: "GUIADIRE",
         auto: "400",
         marca: "",
+        catparanav: "Dirección",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -419,6 +487,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "400 67 / 78",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -431,6 +501,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "400 67 / 78",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -443,6 +515,8 @@ export const stock = [
         rubro: "BASETERM",
         auto: "CORSA",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "93275736"
     },
     {
@@ -455,6 +529,8 @@ export const stock = [
         rubro: "BRIDATERM",
         auto: "CORSA",
         marca: "",
+        catparanav: "Termostato",
+        stock: 10,
         cod_original: "97123543"
     },
     {
@@ -467,6 +543,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "CORSA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "90502115"
     },
     {
@@ -479,6 +557,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "PICK UP",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "MSB33005"
     },
     {
@@ -491,6 +571,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "ASTRA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "09128177"
     },
     {
@@ -503,6 +585,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "ASTRA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -515,6 +599,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "ASTRA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -527,6 +613,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "MERIVA ASTRA VECTRA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: ""
     },
     {
@@ -539,6 +627,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "S-10",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "MSB38101"
     },
     {
@@ -551,6 +641,8 @@ export const stock = [
         rubro: "POLCIGU",
         auto: "ASTRA MERIVA",
         marca: "",
+        catparanav: "Cigüeñal",
+        stock: 10,
         cod_original: "5614444 / 0614"
     }
 ]

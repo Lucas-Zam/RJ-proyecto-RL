@@ -15,7 +15,7 @@ export const ItemListContainer = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     
-    console.log(data);
+    // console.log(data);
 
     // este useEffect se dispara en el montaje
     useEffect( ()=> {

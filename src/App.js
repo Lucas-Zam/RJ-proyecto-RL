@@ -4,50 +4,42 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
-// import { useState } from "react";
-
-
-
 function App() {
 
+    // const [montar, setMontar] = useState(true)
+  
+    return (
+        <>
+        <BrowserRouter>
+  
+            <NavBar/>
+            <Switch>
+                <Route exact path="/">
+                    <ItemListContainer/>
+                </Route>
 
-  // const [montar, setMontar] = useState(true)
+                <Route exact path="/category/:catId">
+                    <ItemListContainer/>
+                </Route>
 
-  return (
-    <>
-      <BrowserRouter>
+                <Route exact path="/detail/:itemId">
+                    <ItemDetailContainer/>
+                </Route>
 
-        <NavBar/>
+                <Route path="*">
+                    {/* <h1 className="texto-centrado">404 page not found</h1> */}
+                    <Redirect to ="/"/>          
+                </Route>
 
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer/>
-          </Route>
+            </Switch>
 
-          <Route exact path="/category/:catId">
-            <ItemListContainer/>
-          </Route>
-
-          <Route exact path="/detail/:itemId">
-            <ItemDetailContainer/>
-          </Route>
-
-          <Route path="*">
-              {/* <h1 className="texto-centrado">404 page not found</h1> */}
-              <Redirect to ="/"/>          
-          </Route>
-
-        </Switch>
-
-      </BrowserRouter>
+        </BrowserRouter>
 
       
-    {/* 
-      <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
-      { montar && <ClickTracker/> } */}    
-    </>
-   
-  );
+        {/* <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
+            { montar && <ClickTracker/> } */}    
+        </>
+    );
 }
 
 export default App;

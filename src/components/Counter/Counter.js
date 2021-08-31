@@ -1,0 +1,27 @@
+import "./Counter.scss"
+
+export const Counter = ({max, cantidad, setCantidad, agregar}) => {
+
+    const handleSumar = () => {
+        if (cantidad < max) {
+            setCantidad(cantidad + 1)
+        }
+    }
+    
+    const handleRestar = () => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1)
+        }
+    }
+
+    return (
+        <>
+            <div className="tarjCantidad">
+                <button className="btn btn-primary margen10" onClick={handleRestar}>-</button>
+                <p className="enfasis600">{cantidad}</p>
+                <button className="btn btn-primary margen10" onClick={handleSumar}>+</button>
+                <button className="btn btn-outline-primary" onClick={agregar}>Agregar al carrito</button>
+            </div>
+        </>
+    )
+}
