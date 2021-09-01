@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CartWidget } from './CartWidget/CartWidget'
+import { CartWidget } from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import './NavBar.scss'
 import logoRL from './logo-RL.png';

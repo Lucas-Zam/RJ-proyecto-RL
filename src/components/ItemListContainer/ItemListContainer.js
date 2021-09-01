@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { UIContext } from '../../context/UIContext'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from './ItemList'
 
@@ -9,17 +10,16 @@ import { ItemList } from './ItemList'
 export const ItemListContainer = () => {
 
 
+    const {loading, setLoading} = useContext(UIContext)
     const { catId } = useParams();
-
+    
     // estado Hook: const [valor,fc modificadora] = useState (valor inicial)
     const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
+
     
-    // console.log(data);
-
-    // este useEffect se dispara en el montaje
     useEffect( ()=> {
-
+        
         setLoading(true);// mientras esté en true mostrará Cargando...
 
         // pedirDatos es una función. Fc que pide en forma asincrónica
@@ -28,11 +28,9 @@ export const ItemListContainer = () => {
             .then(respuesta => {
                 if (catId) {
                     const arrayFiltrado = respuesta.filter( prod => prod.categoria === catId.toLowerCase())
-                    // console.log( arrayFiltrado )
                     setData( arrayFiltrado )
                 }else{
                     setData(respuesta)
-                    // console.log(respuesta)
                 }
             })
             .catch(err => console.log(err))
@@ -40,7 +38,8 @@ export const ItemListContainer = () => {
                 setLoading(false); // al ponerlo en false no aparecerá el Cargando... y
                 // aparecerá el archivo de productos listo.
             })
-
+            
+    // eslint-disable-next-line
     }, [catId])
 
 

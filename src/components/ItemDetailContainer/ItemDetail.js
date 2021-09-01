@@ -1,14 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter } from "../Counter/Counter";
+import { CartContext } from '../../context/CartContext'
 import "./ItemDetail.scss"
 
 export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
 
-    const [cantidad, setCantidad] = useState(1);
+    const {agregarAlCarrito, isInCart, cantidadItemCarrito} = useContext(CartContext)
 
-    const agregarAlCarrito = () => {
-        console.log({id,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original,cantidad})
+    // cantidadItemCarrito(id)
+
+
+    // const [cantidad, setCantidad] = useState(cantidadItemCarrito(id));
+
+    const [cantidad, setCantidad] = useState(1);
+    // agregar al carrito
+
+    const handleAdd = () => {
+        agregarAlCarrito({
+            id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original,cantidad
+        })
     }
 
     return (
@@ -39,7 +50,13 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                 </div>
 
                 <div className="tarjCounter">
-                    <Counter max={stock} cantidad={cantidad} setCantidad={setCantidad} agregar={agregarAlCarrito}/>    
+                    <Counter 
+                        max={stock} 
+                        cantidad={cantidad} 
+                        setCantidad={setCantidad} 
+                        agregar={handleAdd} 
+                        agregado={isInCart(id)}
+                    />    
                 </div>                
                 
             </div>

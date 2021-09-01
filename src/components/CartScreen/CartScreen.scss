@@ -1,0 +1,51 @@
+.d-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3125rem 0.625rem;
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', 'Montserrat-Light', verdana, sans-serif;
+  font-size: 16px;
+  /* background-color: darkcyan; */
+}
+
+.espFuente{
+  font-family: 'Roboto', 'Montserrat-Light', verdana, sans-serif;
+  font-size: 2.5vmin;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.thead {
+  background-color: rgb(222, 223, 176);
+  color:rgb(100, 100, 100);
+  font-weight: 300;
+}
+
+.boxTabla {
+  margin: 10px auto;
+}
+
+.boxImg {
+  width: 70px;
+}
+
+.esp {
+  padding: 0 15px;
+}
+
+.espIzq {
+  padding-left: 25px;
+}
+
+
+.tipoCursor {
+  cursor: pointer;
+}
+
+

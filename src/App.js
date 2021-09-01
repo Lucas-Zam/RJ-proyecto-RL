@@ -1,43 +1,60 @@
 import { NavBar } from "./components/NavBar/NavBar";
-import './styles/styles.scss'
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartScreen } from "./components/CartScreen/CartScreen";
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { CartProvider } from "./context/CartContext";
+import { UIContextProvider } from "./context/UIContext";
+import './styles/styles.scss'
 
 function App() {
 
     // const [montar, setMontar] = useState(true)
-  
+
+
     return (
         <>
-        <BrowserRouter>
-  
-            <NavBar/>
-            <Switch>
-                <Route exact path="/">
-                    <ItemListContainer/>
-                </Route>
 
-                <Route exact path="/category/:catId">
-                    <ItemListContainer/>
-                </Route>
+        <UIContextProvider>
 
-                <Route exact path="/detail/:itemId">
-                    <ItemDetailContainer/>
-                </Route>
+            <CartProvider>
 
-                <Route path="*">
-                    {/* <h1 className="texto-centrado">404 page not found</h1> */}
-                    <Redirect to ="/"/>          
-                </Route>
+                <BrowserRouter>
+        
+                    <NavBar/>
+                    <Switch>
+                        <Route exact path="/">
+                            <ItemListContainer/>
+                        </Route>
 
-            </Switch>
+                        <Route exact path="/category/:catId">
+                            <ItemListContainer/>
+                        </Route>
 
-        </BrowserRouter>
+                        <Route exact path="/detail/:itemId">
+                            <ItemDetailContainer/>
+                        </Route>
 
+                        <Route exact path="/cart">
+                                <CartScreen/>
+                        </Route>
+
+                        <Route path="*">
+                            {/* <h1 className="texto-centrado">404 page not found</h1> */}
+                            <Redirect to ="/"/>          
+                        </Route>
+
+                    </Switch>
+
+                </BrowserRouter>
+
+            </CartProvider>
+
+        </UIContextProvider>
       
-        {/* <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
-            { montar && <ClickTracker/> } */}    
+        
+            {/* <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
+                { montar && <ClickTracker/> } */}    
         </>
     );
 }
