@@ -6,21 +6,26 @@ import "./ItemDetail.scss"
 
 export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
 
-    const {agregarAlCarrito, isInCart, cantidadItemCarrito} = useContext(CartContext)
 
-    // cantidadItemCarrito(id)
+    const {agregarAlCarrito, isInCart, cantidadItemCarrito, modificarCantCarrito} = useContext(CartContext)
 
 
-    // const [cantidad, setCantidad] = useState(cantidadItemCarrito(id));
 
-    const [cantidad, setCantidad] = useState(1);
+    const [cantidad, setCantidad] = useState(cantidadItemCarrito(id));
+
+
+    // const [cantidad, setCantidad] = useState(1);
     // agregar al carrito
 
-    const handleAdd = () => {
+    const handleChange = () => {//modifica cantidad de un item existente en carrito
+        modificarCantCarrito( id, cantidad )
+    }
+
+    const handleAdd = () => {//agrega un item nuevo al carrito
         agregarAlCarrito({
             id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original,cantidad
         })
-    }
+    }      
 
     return (
         <>
@@ -54,7 +59,8 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                         max={stock} 
                         cantidad={cantidad} 
                         setCantidad={setCantidad} 
-                        agregar={handleAdd} 
+                        agregar={handleAdd}
+                        modificar={handleChange}
                         agregado={isInCart(id)}
                     />    
                 </div>                

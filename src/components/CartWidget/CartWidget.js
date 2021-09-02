@@ -20,11 +20,19 @@ export const CartWidget = () => {//será 0 si no viene nada
         <>
 
         <Link to='/cart'>
-            <div className="cartwidget">
-                <FaCartArrowDown/> {/* poner esto */}
-                {/* <img src={logoCarrito} alt="logo" width="40"/>sacar esto */}
-                <span>{cantidadCarrito()}</span>
-            </div>
+            {cantidadCarrito() === 0 ?
+                <div>
+                    <FaCartArrowDown className="cartwidgetB"/>
+                    {/* <img src={logoCarrito} alt="logo" width="40"/>sacar esto */}
+                    <span>{cantidadCarrito()}</span>
+                </div>
+                :
+                <div>
+                    <FaCartArrowDown className="cartwidgetR"/>
+                    {/* <img src={logoCarrito} alt="logo" width="40"/>sacar esto */}
+                    <span>{cantidadCarrito()}</span>
+                </div>
+            }    
         </Link>
 
         </>

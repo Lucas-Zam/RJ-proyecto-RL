@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 import { BsFillTrashFill } from 'react-icons/bs'
+import { HiPencilAlt } from 'react-icons/hi'
 import "./CartScreen.scss"
 
 export const CartScreen = () => {
@@ -22,7 +24,8 @@ export const CartScreen = () => {
                         <th className="esp">Precio Unit.</th>
                         <th className="esp">Cantidad</th>
                         <th className="esp">Subtotal</th>
-                        <th className="esp">Eliminar</th>
+                        <th className="esp1">Modificar Cantidad</th>
+                        <th className="esp1">Eliminar</th>
                     </tr>
                 </thead>
 
@@ -38,7 +41,10 @@ export const CartScreen = () => {
                             <td className="texto-derecha esp">${prod.precio}</td>
                             <td className="texto-derecha esp">{prod.cantidad}</td>
                             <td className="texto-derecha esp">${prod.precio * prod.cantidad}</td>
-                            <td className="texto-centrado esp"><BsFillTrashFill className="tipoCursor" onClick={() => eliminarDelCarrito(prod.id)}/></td>
+                            <td className="texto-centrado esp1">
+                                <Link to={`/detail/${prod.id}`}><HiPencilAlt className="tipoCursor"/></Link>
+                            </td>
+                            <td className="texto-centrado esp1"><BsFillTrashFill className="tipoCursor" onClick={() => eliminarDelCarrito(prod.id)}/></td>
                         </tr>
                     ))}
         

@@ -34,17 +34,20 @@ export const CartProvider = ({children}) => {
 
     const cantidadItemCarrito = (id) => {
         // determina la cantidad que tiene el id en el carrito
-        let ctrol = isInCart(id)
         let cantidadInicial
         let indiceABuscar = carrito.findIndex(el => el.id === id);// me da la posición
-        // console.log(carrito)
-        if (ctrol) {
+        if (isInCart(id)) {
             cantidadInicial = carrito[indiceABuscar].cantidad
         }else{
             cantidadInicial = 1
         }
-        // console.log("Primer cantidad:"+cantidadInicial)
         return cantidadInicial
+    }
+
+    const modificarCantCarrito = (id, cantidad) => {
+        let indiceABuscar = carrito.findIndex(el => el.id === id);// me da la posición
+        carrito[indiceABuscar].cantidad = cantidad
+        setCarrito([...carrito])
     }
 
     const vaciarCarrito = () => {
@@ -75,9 +78,13 @@ export const CartProvider = ({children}) => {
         */
     
     return (
-        <CartContext.Provider value={{ carrito, isInCart, vaciarCarrito, agregarAlCarrito, eliminarDelCarrito, cantidadCarrito, totalCarrito, cantidadItemCarrito }}>
+        
+        <CartContext.Provider value={{ carrito, isInCart, vaciarCarrito, agregarAlCarrito, 
+                                        eliminarDelCarrito, cantidadCarrito, totalCarrito,
+                                        cantidadItemCarrito, modificarCantCarrito }}>
             {children}
         </CartContext.Provider>
+
 
     )
 
