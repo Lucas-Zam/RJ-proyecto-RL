@@ -12,16 +12,19 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
 
 
     const [cantidad, setCantidad] = useState(cantidadItemCarrito(id));
+    const [ingresoCarrito, setIngresoCarrito] = useState(false);
 
 
     // const [cantidad, setCantidad] = useState(1);
     // agregar al carrito
 
     const handleChange = () => {//modifica cantidad de un item existente en carrito
+        setIngresoCarrito(true)
         modificarCantCarrito( id, cantidad )
     }
 
     const handleAdd = () => {//agrega un item nuevo al carrito
+        setIngresoCarrito(true)
         agregarAlCarrito({
             id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original,cantidad
         })
@@ -60,6 +63,7 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                         cantidad={cantidad} 
                         setCantidad={setCantidad} 
                         agregar={handleAdd}
+                        ctrolIngreso={ingresoCarrito}
                         modificar={handleChange}
                         agregado={isInCart(id)}
                     />    

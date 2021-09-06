@@ -32,30 +32,28 @@ export const NavBar = () => {
     return (
         <header className="encabezado">
 
-                <Link className="boxLogo" to={"/"}>
-                    <div className="img-tip">
-                        <img src={logoRL} className="logoRL" alt="logo" width="10"/>
-                    </div>
-                    <div className="p-tip">
-                        <p className="repLucas"><b>REPUESTOS LUCAS</b></p>
-                        <p className="repAlter">Repuestos alternativos</p>
-                        <p className="repAlter">para el automotor marca Chevrolet</p>
-                    </div>
-                </Link>
+            <Link className="boxLogo" to={"/"}>
+                <div className="img-tip">
+                    <img src={logoRL} className="logoRL" alt="logo" width="10"/>
+                </div>
+                <div className="p-tip">
+                    <p className="repLucas"><b>REPUESTOS LUCAS</b></p>
+                    <p className="repAlter">Repuestos alternativos</p>
+                    <p className="repAlter">para el automotor marca Chevrolet</p>
+                </div>
+            </Link>
             
-                <CartWidget/>
+            <CartWidget/>
 
-                {load ? 
-                    <p className="boxNav texto-centrado">Cargando Nav...</p>// cuando load está en true
-                : 
-                    (<nav className="boxNav">
-                        <ul className="ulNav">
-
-                            <NavList categorias={categoria}/>
-
-                        </ul>
-                    </nav>)
-                }
+            {load ? 
+                <p className="boxNav texto-centrado">Cargando Nav...</p>// cuando load está en true
+            : 
+                (<nav className="boxNav">
+                    <ul className="ulNav">
+                        <NavList categorias={categoria}/>
+                    </ul>
+                </nav>)
+            }
 
         </header>
     )

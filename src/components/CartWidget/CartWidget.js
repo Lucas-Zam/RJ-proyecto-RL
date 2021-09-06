@@ -9,32 +9,31 @@ import "./CartWidget.scss"
 
 // import logoCarrito from '../../../img/carrito.png';// sacar esto
 
-// eslint-disable-next-line
-import { FaCartArrowDown } from "react-icons/fa"; {/* poner esto */}
 
-export const CartWidget = () => {//será 0 si no viene nada
+import { FaCartArrowDown } from "react-icons/fa"
+
+
+export const CartWidget = () => {
 
     const {cantidadCarrito} = useContext(CartContext)
 
+
+
     return (  
         <>
-
-        <Link to='/cart'>
-            {cantidadCarrito() === 0 ?
-                <div>
-                    <FaCartArrowDown className="cartwidgetB"/>
-                    {/* <img src={logoCarrito} alt="logo" width="40"/>sacar esto */}
-                    <span>{cantidadCarrito()}</span>
-                </div>
-                :
-                <div>
-                    <FaCartArrowDown className="cartwidgetR"/>
-                    {/* <img src={logoCarrito} alt="logo" width="40"/>sacar esto */}
-                    <span>{cantidadCarrito()}</span>
-                </div>
-            }    
-        </Link>
-
+            {cantidadCarrito() !== 0 ? 
+                // <p className="texto-centrado">Carrito vacío...</p>
+                <Link to='/cart'> 
+                        <FaCartArrowDown className={cantidadCarrito() === 0 ? "negro" : "rojo"}/>
+                        <span className="span1">{cantidadCarrito()}</span>
+                </Link>
+            :
+                <Link to='/'> 
+                        <FaCartArrowDown className={cantidadCarrito() === 0 ? "negro" : "rojo"}/>
+                        <span className="span1">{cantidadCarrito()}</span>
+                </Link>
+            }
         </>
     )
 }
+

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import { UIContext } from '../../context/UIContext'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from './ItemList'
-
+import { Loader } from '../Loader/Loader'
 
 // solicita el archivo de stock y cuando lo tiene
 // lo pasa al componente Itemlist
@@ -39,24 +39,21 @@ export const ItemListContainer = () => {
                 // aparecerá el archivo de productos listo.
             })
             
-    // eslint-disable-next-line
-    }, [catId])
+    }, [catId, setLoading])
 
 
     return (
         <>
             {loading ? 
-            <p className="texto-centrado margen10">Cargando...</p>// cuando loading está en true
+                <Loader/>
+                // <p className="texto-centrado margen10">Cargando...</p>// cuando loading está en true
             :
-            (data.length ?
-                <ItemList productos={data}/> 
-            :
-                <h1 className="texto-centrado margen40">Producto no encontrado</h1>
-            )
-
-            // <ItemList productos={data}/> 
-            // cuando loading está en false
-            // paso el stock al componente ItemList
+                (data.length ?
+                   <ItemList productos={data}/> 
+                :
+                <Redirect to ="/"/>   
+                // <h1 className="texto-centrado margen40">Producto no encontrado</h1>
+                )
             }
         </>
     )

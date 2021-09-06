@@ -63,7 +63,7 @@ export const CartProvider = ({children}) => {
     }
 
         /*
-            los q esten adentro del CartContext.Provider pueden acceder a lo que ponga en el UnContext
+            los q esten adentro del CartContext.Provider pueden acceder a lo que ponga en el CartContext
             por ejemplo si estuviera dentro de cualquier componente, poniendo:
 
             const toto = useContext(CartContext)
