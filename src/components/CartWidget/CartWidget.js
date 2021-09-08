@@ -17,22 +17,15 @@ export const CartWidget = () => {
 
     const {cantidadCarrito} = useContext(CartContext)
 
-
+    const url = cantidadCarrito() !== 0 ? '/cart' : '/'
 
     return (  
         <>
-            {cantidadCarrito() !== 0 ? 
-                // <p className="texto-centrado">Carrito vacío...</p>
-                <Link to='/cart'> 
-                        <FaCartArrowDown className={cantidadCarrito() === 0 ? "negro" : "rojo"}/>
-                        <span className="span1">{cantidadCarrito()}</span>
-                </Link>
-            :
-                <Link to='/'> 
-                        <FaCartArrowDown className={cantidadCarrito() === 0 ? "negro" : "rojo"}/>
-                        <span className="span1">{cantidadCarrito()}</span>
-                </Link>
-            }
+            {/* <p className="texto-centrado">Carrito vacío...</p> */}
+            <Link to={url} > 
+                    <FaCartArrowDown className={cantidadCarrito() === 0 ? "negro" : "rojo"}/>
+                    <span className="span1">{cantidadCarrito()}</span>
+            </Link>
         </>
     )
 }

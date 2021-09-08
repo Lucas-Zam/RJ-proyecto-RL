@@ -1,16 +1,3 @@
-.d-flex {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.3125rem 0.625rem;
-  color: rgb(0, 0, 0);
-  font-family: 'Roboto', 'Montserrat-Light', verdana, sans-serif;
-  font-size: 16px;
-  /* background-color: darkcyan; */
-}
 
 .espFuente{
   font-family: 'Roboto', 'Montserrat-Light', verdana, sans-serif;
@@ -30,6 +17,10 @@ table {
   margin: 10px auto;
 }
 
+.centrado {
+  align-items: center;
+}
+
 .boxImg {
   width: 70px;
 }
@@ -40,14 +31,6 @@ table {
 }
 .esp1 {
   padding: 0 5px;
-}
-
-.espIzq {
-  padding-left: 25px;
-}
-
-.tipoCursor {
-  cursor: pointer;
 }
 
 .crema {

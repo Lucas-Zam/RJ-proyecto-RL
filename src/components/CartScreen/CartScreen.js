@@ -4,21 +4,29 @@ import { Link } from 'react-router-dom'
 import { BsFillTrashFill } from 'react-icons/bs'
 import { HiPencilAlt } from 'react-icons/hi'
 import "./CartScreen.scss"
-import { ItemListContainer } from '../ItemListContainer/ItemListContainer'
+import { CartTableRow } from './CartTableRow'
 
 export const CartScreen = () => {
 
-    const {carrito, eliminarDelCarrito, totalCarrito, vaciarCarrito} = useContext(CartContext)
+    const {carrito, totalCarrito, vaciarCarrito} = useContext(CartContext)
 
 
     return (
         <>
+        <h2 className="texto-centrado margen20">Resumen de compra</h2>
+
         {(carrito.length === 0) ?
-            // <Redirect to ="/"/>
-            <ItemListContainer/>
-            :
-            <div className="centrado espFuente">
-                <h2 className="texto-centrado margen20">Resumen de compra</h2>
+            <>
+                <h4 className="texto-centrado margen20">No hay ítems agregados en el carrito</h4>
+                <div className="texto-centrado">
+                    <Link to="/"> 
+                        <button className="btn btn-success margen10">Volver al Listado</button>
+                    </Link>
+                </div>
+            </>
+            :          
+            <>
+            <div className="texto-centrado espFuente">
 
                 <table className="boxTabla">
                     <thead className="thead margen20">
@@ -32,29 +40,14 @@ export const CartScreen = () => {
                             <th className="esp">Subtotal</th>
                             <th className="texto-centrado esp1"><HiPencilAlt/></th>
                             <th className="texto-centrado esp1"><BsFillTrashFill/></th>
-                            {/* <th className="esp1">Modificar Cantidad</th>
-                            <th className="esp1">Eliminar</th> */}
                         </tr>
                     </thead>
-                    <tbody>
-                        {carrito.map(prod => (
-                            <tr key={prod.id}>
-                                <td className="boxImg">
-                                    <img src={"../img/"+prod.img} alt="## imagen no disponible ##"/>
-                                </td>
-                                <td className="texto-centrado esp">{prod.codigo}</td>
-                                <td className="texto-izquierda esp">{prod.desc}</td>
-                                <td className="texto-izquierda esp">{prod.catparanav}</td>
-                                <td className="texto-derecha esp">${prod.precio}</td>
-                                <td className="texto-derecha esp">{prod.cantidad}</td>
-                                <td className="texto-derecha esp">${prod.precio * prod.cantidad}</td>
-                                <td className="texto-centrado esp1">
-                                    <Link to={`/detail/${prod.id}`}><HiPencilAlt className="tipoCursor"/></Link>
-                                </td>
-                                <td className="texto-centrado esp1"><BsFillTrashFill className="tipoCursor" onClick={() => eliminarDelCarrito(prod.id)}/></td>
-                            </tr>
-                        ))}
-            
+
+                    <tbody>                        
+                        {carrito.map(prod => <tr> { <CartTableRow key={prod.id} {...prod}/> } </tr> )}
+                    </tbody>
+
+                    <tfoot>
                         <td className="boxImg">
                             <img src="../img/vacio.jpg" alt="## imagen no disponible ##" width="40%"/>
                         </td>
@@ -64,11 +57,12 @@ export const CartScreen = () => {
                         <td className="texto-derecha esp"></td>
                         <td className="texto-derecha esp"></td>
                         <td className="texto-derecha esp enfasis600 sombra crema">${totalCarrito()}</td>
-                    </tbody>
+                    </tfoot>
                 </table>
 
                 <button className="btn btn-danger margen10" onClick={vaciarCarrito}>Vaciar carrito</button>
             </div>
+            </>
         }
         </>
     )
