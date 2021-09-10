@@ -15,6 +15,7 @@ export const ItemList = ( {productos = []} ) => {
                 {/* modo 1 -------------------------------------------- */}
                 {productos.map((prod) => <Item key={prod.id} {...prod}/> )}
 
+
                 {/* modo 2 (modificar el modo 2 en Item.js)---------------------- */}
                 {/* {productos.map((prod) => <Item key={prod.id} item={prod}/> )} */}
 

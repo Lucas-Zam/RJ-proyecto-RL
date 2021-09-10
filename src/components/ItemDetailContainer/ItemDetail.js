@@ -30,6 +30,7 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
         })
     }      
 
+
     return (
         <>
             <h2 className="texto-centrado titulo"> DETALLE DE PRODUCTO</h2>

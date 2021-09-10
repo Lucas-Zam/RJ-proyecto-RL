@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { pedirDatos } from '../../helpers/pedirDatos'
+import { UIContext } from '../../context/UIContext'
+import { getFirestore } from '../../firebase/config'
 import { ItemDetail } from './ItemDetail'
 import { Loader } from '../Loader/Loader'
 
@@ -8,21 +9,26 @@ import { Loader } from '../Loader/Loader'
 
 export const ItemDetailContainer = () => {
 
-    const { itemId } = useParams()
+    const {loading, setLoading} = useContext(UIContext)
 
+    const { itemId } = useParams()
     const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
         setLoading(true)
 
-        pedirDatos()
-            .then( res => {
-                setItem( res.find( prod => prod.id === parseInt(itemId)) )
+        const db = getFirestore()
+        const productos = db.collection('productos')
+        const item = productos.doc(itemId)
+
+        item.get()
+            .then((doc) => {
+            setItem( {...doc.data(), id: doc.id} )
             })
             .finally(()=> { setLoading(false)})
 
-    }, [itemId])
+
+    }, [itemId, setLoading])
 
 
     return (
@@ -34,7 +40,6 @@ export const ItemDetailContainer = () => {
                     (item ?
                         <ItemDetail {...item}/>
                     :
-                        // <Redirect to ="/"/>   
                         <h1 className="texto-centrado margen40">Producto no encontrado</h1>
                     )
                 }

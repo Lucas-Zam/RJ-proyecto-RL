@@ -2,7 +2,8 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartScreen } from "./components/CartScreen/CartScreen";
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import { CartProvider } from "./context/CartContext";
 import { UIContextProvider } from "./context/UIContext";
 import './styles/styles.scss'
@@ -40,8 +41,8 @@ function App() {
                         </Route>
 
                         <Route path="*">
-                            {/* <h1 className="texto-centrado">404 page not found</h1> */}
-                            <Redirect to ="/"/>          
+                            <h2 className="texto-centrado">404 page not found</h2>
+                            {/* <Redirect to ="/"/> */}
                         </Route>
 
                     </Switch>

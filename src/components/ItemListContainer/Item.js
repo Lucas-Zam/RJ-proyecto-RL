@@ -7,9 +7,9 @@ import "./Item.scss"
 // modo 1 ----------------------------------------------
 export const Item = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
 
-    // console.log(id);
-    // console.log(codigo);
-    // console.log(desc);
+    console.log(id);
+    console.log(codigo);
+    console.log(desc);
     // debugger;
 
     return (
