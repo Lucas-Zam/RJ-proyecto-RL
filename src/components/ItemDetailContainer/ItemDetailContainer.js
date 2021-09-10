@@ -37,10 +37,10 @@ export const ItemDetailContainer = () => {
                     <Loader/>
                     /* <p className="texto-centrado margen10">Cargando...</p> */
                 :
-                    (item ?
+                    (item?.categoria?
                         <ItemDetail {...item}/>
                     :
-                        <h1 className="texto-centrado margen40">Producto no encontrado</h1>
+                        <h2 className="texto-centrado margen40">Producto no encontrado</h2>
                     )
                 }
         </>

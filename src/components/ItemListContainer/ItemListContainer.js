@@ -27,31 +27,21 @@ export const ItemListContainer = () => {
         setLoading(true)
 
         const db = getFirestore()
-        const productos = db.collection('productos')
+        let productos = db.collection('productos')
 
         if (catId) {
-            const filtrado = productos.where('categoria', '==', catId)
-            filtrado.get()
-                .then((response) => {
-                    const data = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
-                    console.log(data)
-                    setData(data)
-                })
-                .finally(()=> {
-                    setLoading(false)
-                })
-        } else {
-            productos.get()
-                .then((response) => {
-                    const data = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
-                    console.log(data)
-                    setData(data)
-                })
-                .finally(()=> {
-                    setLoading(false)
-                })
+            productos = productos.where('categoria', '==', catId)
         }
-
+        productos.get()
+            .then((response) => {
+                const data = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
+                console.log(data)
+                setData(data)
+            })
+            .finally(()=> {
+                setLoading(false)
+            })
+            
     }, [catId, setLoading])
   
 
