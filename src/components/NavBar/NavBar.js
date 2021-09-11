@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CartWidget } from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import './NavBar.scss'
 import logoRL from './logo-RL.png';
 
+import { FcMenu } from "react-icons/fc"
+
 export const NavBar = () => {
 
+    const [muestroLinks, setMuestroLinks] = useState(false)
 
     return (
         <header className="encabezado">
@@ -21,10 +24,11 @@ export const NavBar = () => {
                 </div>
             </Link>
             
-            <CartWidget/>
+            <CartWidget className="cartNav"/>
 
             <div className="boxNav">
-                <div className="ulNav">
+                <button className="botonNav"><FcMenu onClick={() => setMuestroLinks(!muestroLinks)}/></button>                
+                <div className="ulNav" id={muestroLinks ? "hidden" : ""}>
                     <Link className="linkNav" to={"/"}><div className="linkNava">Inicio</div></Link>                          
                     <Link className="linkNav" to={"/category/calefaccion"}><div className="linkNava">Calefacción</div></Link>
                     <Link className="linkNav" to={"/category/distribucion"}><div className="linkNava">Distribución</div></Link>

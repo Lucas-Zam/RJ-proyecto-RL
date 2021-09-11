@@ -14,12 +14,13 @@
 }
 
     .boxLogo{
-        width: 80%;
+        flex: 80%;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        justify-content: left;
         align-items: center;
         .img-tip {
-            width: 10%;
+            flex: 10%;
             min-width: 50px;
             max-width: 77px;
             height: auto;
@@ -29,7 +30,7 @@
             }
         }
         .p-tip{
-            width: 95%;    
+            flex: 90%;
             .repLucas{
                 font-size: 3vmin;
                 font-weight: 600;
@@ -40,8 +41,12 @@
         }
     }
 
+    .cartNav{
+        flex: 20%;
+    }
+
     .boxNav{
-        width: 100%;
+        flex: 100%;
         background-color: rgb(222, 223, 176);
         box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         .ulNav {
@@ -53,6 +58,7 @@
             padding: 3px;
             .linkNav {
                 list-style: none;
+                // flex: 14%;
                 .linkNava {
                     text-align: center;
                     text-decoration: none;
@@ -71,6 +77,15 @@
         }
     }
 
+    .botonNav {
+        display: none;
+    }
+
+    #hidden {
+        display: flex;
+    }
+
+
 /*------------------------------------------------------------------ */
 @media screen and (max-width: 992px) {
     .boxLogo .p-tip .repLucas {font-size: 3vmin;}
@@ -84,9 +99,31 @@
     // .boxLogo .p-tip .repLucas {font-size: 14px;}
     // .boxLogo .p-tip .repLucas {font-size: 20px;}
     .boxLogo{
-        width: 60%;
+        flex: 60%;
     }
     a {padding: 0 10px;}
+    .boxNav {
+        margin: 0 auto;
+        padding: 0;
+    }
+    .botonNav {
+        margin: 5px auto;
+        display: flex;
+    }
+    .boxNav .ulNav {
+        display: none;
+    }
+    #hidden {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .linkNav{
+        width: 100%;
+    }
+    .linkNava{
+        border-bottom: white solid 1px;
+    }
 }
 @media screen and (max-width: 360px) {
     // .boxLogo .p-tip .repLucas {font-size: 12px;}
