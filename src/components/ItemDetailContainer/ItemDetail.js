@@ -49,7 +49,11 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                     <p>{"Rubro: "}{rubro}</p>
                     <p>{"Marca: "}{marca}</p>
                     <p>{"Código Original de Fábrica: "}{cod_original}</p>
-                    <p>{"Stock disponible: "}{stock}</p>
+                    {stock > 0 ?
+                        <p>{"Stock disponible: "}{stock}</p>
+                        :
+                        <p className="sinStock">PRODUCTO SIN STOCK</p>
+                    }
                     <hr/>
                     <p className="texto-centrado enfasis600">{"$ "}{precio}</p>
                 </div>
@@ -57,18 +61,22 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                 <div className="tarjVolver">
                     <Link to={`/category/${categoria}`} className="btn btn-primary encuadre sombra">Volver</Link>
                 </div>
-
-                <div className="tarjCounter">
-                    <Counter 
-                        max={stock} 
-                        cantidad={cantidad} 
-                        setCantidad={setCantidad} 
-                        agregar={handleAdd}
-                        ctrolIngreso={ingresoCarrito}
-                        modificar={handleChange}
-                        agregado={isInCart(id)}
-                    />    
-                </div>                
+      
+                {stock > 0 ?
+                    <div className="tarjCounter">
+                        <Counter 
+                            max={stock} 
+                            cantidad={cantidad} 
+                            setCantidad={setCantidad} 
+                            agregar={handleAdd}
+                            ctrolIngreso={ingresoCarrito}
+                            modificar={handleChange}
+                            agregado={isInCart(id)}
+                        />    
+                    </div>
+                    :                
+                    <div className="tarjCounter"></div>
+                }
                 
             </div>
             

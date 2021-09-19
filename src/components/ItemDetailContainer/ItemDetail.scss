@@ -46,6 +46,11 @@
 	width: 61%;
 }
 
+.sinStock{
+	background-color: red;
+	color: white;
+}
+
 @media screen and (max-width: 992px) {
 	/*se hace si tiene 992px o menos*/
 	p {font-size: 0.875rem;}

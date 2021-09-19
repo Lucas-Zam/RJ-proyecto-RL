@@ -12,7 +12,7 @@ export const UIContextProvider = ({children}) => {
 
     
     const [loading, setLoading] = useState(false)
-    console.log("loading:"+loading)
+    // console.log("loading:"+loading)
 
 
     return (

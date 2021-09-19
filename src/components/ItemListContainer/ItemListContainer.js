@@ -35,7 +35,6 @@ export const ItemListContainer = () => {
         productos.get()
             .then((response) => {
                 const data = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
-                console.log(data)
                 setData(data)
             })
             .finally(()=> {
@@ -75,9 +74,9 @@ export const ItemListContainer = () => {
                 (data.length ?
                    <ItemList productos={data}/>
                 :
-                // esto sucede cuando la longitud de data (productos) no existe o sea esa 
-                // categoria elegida no tiene productos en el archivo
-                <h2 className="texto-centrado margen40">Producto no encontrado ....</h2>
+                    // esto sucede cuando la longitud de data (productos) no existe o sea esa 
+                    // categoria elegida no tiene productos en el archivo
+                    <h2 className="texto-centrado margen40">Producto no encontrado ....</h2>
                 )
             }
         </>

@@ -3,6 +3,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartScreen } from "./components/CartScreen/CartScreen";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Checkout } from "./components/Checkout/Checkout";
 // import { Redirect } from 'react-router-dom'
 import { CartProvider } from "./context/CartContext";
 import { UIContextProvider } from "./context/UIContext";
@@ -38,6 +39,10 @@ function App() {
 
                         <Route exact path="/cart">
                                 <CartScreen/>
+                        </Route>
+                        
+                        <Route exact path="/checkout">
+                            <Checkout/>
                         </Route>
 
                         <Route path="*">

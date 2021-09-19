@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import "./Counter.scss"
 
 export const Counter = ({max, cantidad, setCantidad, agregar, modificar, ctrolIngreso, agregado}) => {
-    console.log("agregado:(esta en carrito?): "+agregado)
-    console.log("ctrolingreso:(pasó por los handles?): "+ctrolIngreso)
 
-
+    if (cantidad > max ) {
+        setCantidad(max)
+    }
 
     const handleSumar = () => {
         if (cantidad < max) {

@@ -27,6 +27,7 @@ export const NavBar = () => {
             <CartWidget className="cartNav"/>
 
             <div className="boxNav">
+                {/* aparece el botón con max-width de 576px y los links quedan en columna */}
                 <button className="botonNav"><FcMenu onClick={() => setMuestroLinks(!muestroLinks)}/></button>                
                 <div className="ulNav" id={muestroLinks ? "hidden" : ""}>
                     <Link className="linkNav" to={"/"}><div className="linkNava">Inicio</div></Link>                          

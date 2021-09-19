@@ -1,0 +1,52 @@
+.cajaError {
+  margin: 0 10px;
+}
+
+.tit1 {
+  background-color: rgb(222, 223, 176);
+  box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  color: rgb(77, 77, 77);
+  text-align: center;
+  padding: 3px;
+  margin: 10px;
+}
+
+.linea1 {
+  padding-top: 5px;
+}
+
+.linea2 {
+  background-color: rgb(216, 216, 201);
+  text-align: center;
+  width: 50%;
+}
+
+.formu__grupo {
+  margin: 5px;
+}
+.formu__label {
+	display: block;
+	font-weight: 500;
+	padding: 5px 0.625rem 0.1875rem 0.8125rem;
+
+}
+
+.formu__input {
+	width: 30%;
+	background: #fff;
+	border: 1px solid rgb(138, 135, 135);
+	border-radius: 1px;
+	height: 30px;
+	line-height: 45px;
+	padding: 0 2.5rem 0 0.625rem;
+	transition: .3s ease all;
+}
+
+.formu__input:focus {
+	border: 3px solid #0075ff;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(255, 255, 255, 0.473);
+}
+
+.tituh4 {font-size: 1rem;}
+

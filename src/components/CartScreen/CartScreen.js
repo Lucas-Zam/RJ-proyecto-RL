@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
-import { Link } from 'react-router-dom'
 import { BsFillTrashFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 import { HiPencilAlt } from 'react-icons/hi'
 import "./CartScreen.scss"
 import { CartTableRow } from './CartTableRow'
@@ -44,23 +44,32 @@ export const CartScreen = () => {
                     </thead>
 
                     <tbody>                        
-                        {carrito.map(prod => <tr> { <CartTableRow key={prod.id} {...prod}/> } </tr> )}
+                        {carrito.map(prod => <tr key={prod.id}>{<CartTableRow key={prod.id}{...prod}/>}</tr>)}
                     </tbody>
 
                     <tfoot>
-                        <td className="boxImg">
-                            <img src="../img/vacio.jpg" alt="## imagen no disponible ##" width="40%"/>
-                        </td>
-                        <td className="texto-centrado esp"></td>
-                        <td className="texto-izquierda esp"></td>
-                        <td className="texto-derecha esp"></td>
-                        <td className="texto-derecha esp"></td>
-                        <td className="texto-derecha esp"></td>
-                        <td className="texto-derecha esp enfasis600 sombra crema">${totalCarrito()}</td>
+                        <tr>
+                            <td className="boxImg">
+                                <img src="../img/vacio.jpg" alt="## imagen no disponible ##" width="40%"/>
+                            </td>
+                            <td className="texto-centrado esp"></td>
+                            <td className="texto-izquierda esp"></td>
+                            <td className="texto-derecha esp"></td>
+                            <td className="texto-derecha esp"></td>
+                            <td className="texto-derecha esp"></td>
+                            <td className="texto-derecha esp enfasis600 sombra crema">${totalCarrito()}</td>
+                        </tr>
                     </tfoot>
                 </table>
 
+                <hr/>
                 <button className="btn btn-danger margen10" onClick={vaciarCarrito}>Vaciar carrito</button>
+                <Link to="/checkout">
+                    <button className="btn btn-success">
+                        Terminar mi compra
+                    </button>
+                </Link>
+
             </div>
             </>
         }
