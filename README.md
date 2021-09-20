@@ -21,4 +21,4 @@ Seguramente este proyecto se estará modificando, a medida que aparezcan nuevas 
 Documentación suplementaria en (https://reactjs.org/).
 
 https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/proceso%20de%20compra.pdf
-![](https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/proceso%20de%20compra.pdf)
+![](https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/proceso%20de%20compra.png)
