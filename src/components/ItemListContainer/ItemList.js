@@ -7,6 +7,7 @@ import "./ItemList.scss"
 // hacia el componente Item
 export const ItemList = ( {productos = []} ) => {
 
+
     return (
         <section>
             <h2 className="texto-centrado titulo">Productos</h2>

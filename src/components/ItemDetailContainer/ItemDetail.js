@@ -4,6 +4,7 @@ import { Counter } from "../Counter/Counter";
 import { CartContext } from '../../context/CartContext'
 import "./ItemDetail.scss"
 
+
 export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
 
 

@@ -15,7 +15,6 @@ export const ItemListContainer = () => {
     const {loading, setLoading} = useContext(UIContext)
     const { catId } = useParams()
 
-
     // estado Hook: const [valor,fc modificadora] = useState (valor inicial)
     const [data, setData] = useState([])
     // const [loading, setLoading] = useState(false)
@@ -72,7 +71,7 @@ export const ItemListContainer = () => {
                 // <p className="texto-centrado margen10">Cargando...</p>// cuando loading está en true
             :
                 (data.length ?
-                   <ItemList productos={data}/>
+                   <ItemList productos={data} />
                 :
                     // esto sucede cuando la longitud de data (productos) no existe o sea esa 
                     // categoria elegida no tiene productos en el archivo
