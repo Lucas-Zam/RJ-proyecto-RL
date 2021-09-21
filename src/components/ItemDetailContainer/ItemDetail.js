@@ -60,7 +60,8 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                 </div>
 
                 <div className="tarjVolver">
-                    <Link to={`/category/${categoria}`} className="btn btn-primary encuadre sombra">Volver</Link>
+                    <Link to={`/`} className="btn btn-primary encuadre sombra">Volver Inicio</Link>
+                    <Link to={`/category/${categoria}`} className="btn btn-primary encuadre sombra posicion">Volver a {catparanav}</Link>
                 </div>
       
                 {stock > 0 ?

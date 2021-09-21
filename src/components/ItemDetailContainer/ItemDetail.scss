@@ -51,6 +51,11 @@
 	color: white;
 }
 
+.posicion{
+	margin-left: 5px;
+}
+
+
 @media screen and (max-width: 992px) {
 	/*se hace si tiene 992px o menos*/
 	p {font-size: 0.875rem;}
@@ -58,6 +63,10 @@
 @media screen and (max-width: 768px) {
 	/*se hace si tiene 768px o menos*/
 	p {font-size: 0.875rem;}
+	.posicion{
+		margin-left: -90px;
+		margin-top: 0px;
+	}
 }
 @media screen and (max-width: 576px) {
 	/*se hace si tiene 576px o menos*/
@@ -66,4 +75,9 @@
 @media screen and (max-width: 341px) {
 	/*se hace si tiene 341px o menos*/
 	p {font-size: 0.625rem;}
+	.posicion{
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+
 }
