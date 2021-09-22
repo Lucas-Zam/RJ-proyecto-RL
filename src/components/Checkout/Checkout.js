@@ -23,7 +23,6 @@ export const Checkout = () => {
         email1: "",
     })
 
-    // let email1 = "";
 
     const handleInputChange = (e) => {
             setValues({
@@ -137,6 +136,7 @@ export const Checkout = () => {
                                 onChange={handleInputChange}
                                 name="email1"
                                 className="formu__input"
+                                autoComplete="nope"//para q el navegador no autocomplete, el truco es poner un valor no válido
                                 required
                             />
                         </div>

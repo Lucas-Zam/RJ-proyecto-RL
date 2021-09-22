@@ -38,8 +38,11 @@ export const CartScreen = () => {
                             <th className="esp">$ Unit.</th>
                             <th className="esp">Cant.</th>
                             <th className="esp">Subtotal</th>
-                            <th className="texto-centrado esp1"><HiPencilAlt/></th>
-                            <th className="texto-centrado esp1"><BsFillTrashFill/></th>
+                            <th className="texto-centrado esp1 estado">Modif</th>
+                            <th className="texto-centrado esp1 estado">Elim</th>
+
+                            <th className="texto-centrado esp1 estado1"><HiPencilAlt/></th>
+                            <th className="texto-centrado esp1 estado1"><BsFillTrashFill/></th>
                         </tr>
                     </thead>
 
