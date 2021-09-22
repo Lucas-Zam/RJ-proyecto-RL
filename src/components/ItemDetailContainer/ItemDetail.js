@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Counter } from "../Counter/Counter";
 import { CartContext } from '../../context/CartContext'
 import "./ItemDetail.scss"
+import { UIContext } from '../../context/UIContext';
 
 
 export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marca,catparanav,stock,cod_original} ) => {
@@ -10,14 +11,11 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
 
     const {agregarAlCarrito, isInCart, cantidadItemCarrito, modificarCantCarrito} = useContext(CartContext)
 
-
+    const {usoCateg} = useContext(UIContext)
 
     const [cantidad, setCantidad] = useState(cantidadItemCarrito(id));
     const [ingresoCarrito, setIngresoCarrito] = useState(false);
 
-
-    // const [cantidad, setCantidad] = useState(1);
-    // agregar al carrito
 
     const handleChange = () => {//modifica cantidad de un item existente en carrito
         setIngresoCarrito(true)
@@ -59,9 +57,13 @@ export const ItemDetail = ( {id,img,codigo,desc,precio,categoria,rubro,auto,marc
                     <p className="texto-centrado enfasis600">{"$ "}{precio}</p>
                 </div>
 
+
                 <div className="tarjVolver">
-                    <Link to={`/`} className="btn btn-primary encuadre sombra">Volver Inicio</Link>
-                    <Link to={`/category/${categoria}`} className="btn btn-primary encuadre sombra posicion">Volver a {catparanav}</Link>
+                    {usoCateg === "/" ?
+                        <Link to={`/`} className="btn btn-primary encuadre sombra">Volver a Inicio</Link>
+                    :
+                        <Link to={`/category/${categoria}`} className="btn btn-primary encuadre sombra">Volver a {catparanav}</Link>
+                    }           
                 </div>
       
                 {stock > 0 ?

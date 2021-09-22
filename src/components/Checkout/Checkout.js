@@ -18,22 +18,26 @@ export const Checkout = () => {
 
     const [values, setValues] = useState({
         nombre: "",
-        email: "",
         tel: 0,
+        email: "",
+        email1: "",
     })
 
+    // let email1 = "";
+
     const handleInputChange = (e) => {
-        setValues({
-            ...values,
-            [e.target.name]: e.target.value
-        })
+            setValues({
+                ...values,
+                [e.target.name]: e.target.value
+            })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         if (values.nombre.length > 3 && values.email.length > 3 && values.email1.length > 3 && values.tel.length > 5) {
             if (values.email === values.email1) {
+                delete values.email1
 
                 //si validación de datos está ok:
                 //  se genera la orden de compra
@@ -93,7 +97,7 @@ export const Checkout = () => {
                 <div>
                     <form onSubmit={handleSubmit}>
                         <div className="formu__grupo">
-                            <label htmlFor="nombre" class="formu__label tituh4"> Nombre y Apellido </label>
+                            <label htmlFor="nombre" className="formu__label tituh4"> Nombre y Apellido </label>
                             <input
                                 type="text"
                                 value={values.nombre}
@@ -104,7 +108,7 @@ export const Checkout = () => {
                             />
                         </div>
                         <div className="formu__grupo">
-                            <label htmlFor="tel" class="formu__label tituh4"> Teléfono </label>
+                            <label htmlFor="tel" className="formu__label tituh4"> Teléfono </label>
                             <input
                                 type="tel"
                                 value={values.tel}
@@ -115,7 +119,7 @@ export const Checkout = () => {
                             />
                         </div>
                         <div className="formu__grupo">
-                            <label htmlFor="email" class="formu__label tituh4"> Correo Electrónico </label>
+                            <label htmlFor="email" className="formu__label tituh4"> Correo Electrónico </label>
                             <input
                                 type="email"
                                 value={values.email}
@@ -126,7 +130,7 @@ export const Checkout = () => {
                             />
                         </div>
                         <div className="formu__grupo">
-                            <label htmlFor="email1" class="formu__label tituh4"> Repetir Correo Electrónico </label>
+                            <label htmlFor="email1" className="formu__label tituh4"> Repetir Correo Electrónico </label>
                             <input
                                 type="email"
                                 value={values.email1}

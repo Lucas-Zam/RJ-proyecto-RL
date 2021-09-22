@@ -15,6 +15,8 @@ export const ItemListContainer = () => {
     const {loading, setLoading} = useContext(UIContext)
     const { catId } = useParams()
 
+    const {setUsoCateg} = useContext(UIContext)
+
     // estado Hook: const [valor,fc modificadora] = useState (valor inicial)
     const [data, setData] = useState([])
     // const [loading, setLoading] = useState(false)
@@ -24,12 +26,14 @@ export const ItemListContainer = () => {
 
     useEffect( ()=> {
         setLoading(true)
+        setUsoCateg("/")
 
         const db = getFirestore()
         let productos = db.collection('productos')
 
         if (catId) {
             productos = productos.where('categoria', '==', catId)
+            setUsoCateg(catId)
         }
         productos.get()
             .then((response) => {
@@ -40,8 +44,16 @@ export const ItemListContainer = () => {
                 setLoading(false)
             })
             
-    }, [catId, setLoading])
-  
+    }, [catId, setLoading, setUsoCateg])
+
+    // console.log("usocateg:"+usoCateg)
+        
+        // if (catId) {
+        //     setUsoCateg(catId)
+        // }else{
+        //     setUsoCateg("/")
+        // }
+        // console.log(usoCateg)
 
     //     setLoading(true);// mientras esté en true mostrará Cargando...
 
@@ -73,10 +85,14 @@ export const ItemListContainer = () => {
                 (data.length ?
                    <ItemList productos={data} />
                 :
+                
                     // esto sucede cuando la longitud de data (productos) no existe o sea esa 
                     // categoria elegida no tiene productos en el archivo
-                    <h2 className="texto-centrado margen40">Producto no encontrado ....</h2>
-                )
+                    <>
+                        <h2 className="texto-centrado margen40">Producto no encontrado ....</h2>
+                        <h3 className="texto-centrado margen40">Tal vez no esté conectado a internet ....</h3>
+                    </>
+                )    
             }
         </>
     )

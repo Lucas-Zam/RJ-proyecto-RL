@@ -6,6 +6,22 @@ import 'firebase/firestore'
 // cuando tengo los datos válidos, entonces
 export const generarOrden = (buyer,carrito,total) => {
 
+    // en carrito1 no se guarda catparanav, img, stock
+    let carrito1 = carrito.map((item) => ({
+        id: item.id,
+        codigo: item.codigo, 
+        desc: item.desc,
+        precio: item.precio,
+        categoria: item.categoria,
+        rubro: item.rubro,
+        auto: item.auto,
+        marca: item.marca,
+        cod_original: item.cod_original,
+        cantidad: item.cantidad,
+     } ))
+    // igual anterior
+    // let carrito1 = carrito.map(function(item) {return {codigo:item.codigo, desc:item.desc } })
+
 
     return new Promise ( async (resolve, reject) => {
 
@@ -14,14 +30,14 @@ export const generarOrden = (buyer,carrito,total) => {
         
         const newOrder = {//se genera el objeto de la nueva orden de compra
             buyer: buyer,
-            items: carrito,
+            items: carrito1,
             total: total,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 
         //BATCH DE ACTUALIZACION DE LOS DOCUMENTOS A COMPRAR
             const itemsToUpdate = db.collection('productos')// el where lleva 3 parámetros:
-                .where(firebase.firestore.FieldPath.documentId(), 'in', carrito.map(prod => prod.id))
+                .where(firebase.firestore.FieldPath.documentId(), 'in', carrito1.map(prod => prod.id))
                 //en itemsToUpdate = la referencia de todos los id de la coleccion que estén(in) o coincidan con los id que 
                 //están en el arreglo carrito.map formado por los id de los productos q están en el carrito
                 //se usa el id como comparación
@@ -34,7 +50,7 @@ export const generarOrden = (buyer,carrito,total) => {
             // stock disponible
 
             query.docs.forEach((doc) => {// batch de actualización
-                const itemInCart = carrito.find(el => el.id === doc.id)
+                const itemInCart = carrito1.find(el => el.id === doc.id)
                 //en el preciso momento de generar la orden, se controla q haya stock disponible
                 if (doc.data().stock >= itemInCart.cantidad ) {
                     batch.update(doc.ref, {stock: doc.data().stock - itemInCart.cantidad })
