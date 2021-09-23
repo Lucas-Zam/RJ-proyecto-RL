@@ -22,9 +22,9 @@ Asimismo en la estructura del resumen de compra, hay botones para modificar cant
 
 En caso de concretar la compra, se reduce el stock disponible de productos, y se ingresa la órden de compra a la base de datos de órdenes.
 
-Está realizado íntegramente utilizando Html, Scss, Javascript y ReactJS.
+Se utiliza un Context para integrar todas las funciones inherentes al carrito.
 
-Seguramente este proyecto se estará modificando, a medida que aparezcan nuevas ideas de complementación y de aprendizaje.
+Este proyecto está realizado íntegramente utilizando Html, Scss, Javascript y ReactJS. Además se estará modificando, a medida que aparezcan nuevas ideas de complementación y de aprendizaje.
 
 ### Librerías y dependencias utilizadas:
 
