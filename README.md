@@ -10,7 +10,7 @@ En la página principal, se muestran todos los productos comercializados por la 
 
 Se utiliza Firebase donde se encuentran la base de datos de productos y de órdenes de compra.
 
-Posee una navegación por categorías para encontrar el producto buscado.
+Posee una barra de navegación por categorías para sectorizar la base y encontrar el producto buscado.
 
 Además, se puede ingresar a cada producto, y ver en detalle todos los atributos específicos del mismo.
 
@@ -20,9 +20,9 @@ Este carrito, muestra cada producto, cantidad a comprar, valor parcial y total d
 
 Asimismo en la estructura del resumen de compra, hay botones para modificar cantidad y vaciar parcial o totalmente el carrito.
 
-En caso de concretar la compra, se reduce el stock disponible de productos,y se ingresa la órden de compra a la base de datos de órdenes.
+En caso de concretar la compra, se reduce el stock disponible de productos, y se ingresa la órden de compra a la base de datos de órdenes.
 
-Está realizado íntegramente utilizando Html, Scss, javascript y ReactJS.
+Está realizado íntegramente utilizando Html, Scss, Javascript y ReactJS.
 
 Seguramente este proyecto se estará modificando, a medida que aparezcan nuevas ideas de complementación y de aprendizaje.
 
