@@ -28,7 +28,8 @@ Este proyecto está realizado íntegramente utilizando Html, Scss, Javascript y 
 
 ### Librerías y dependencias utilizadas:
 
-Firebase / Node-sass / SweetAlert2 / React-Icons
+![](https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/librerias%20y%20dependencias.png)
+
 
 ### Explicación del proceso de compra
 
