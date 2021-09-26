@@ -26,6 +26,10 @@ Se utiliza un Context para integrar todas las funciones inherentes al carrito.
 
 Este proyecto está realizado íntegramente utilizando Html, Scss, Javascript y ReactJS. Además se estará modificando, a medida que aparezcan nuevas ideas de complementación y de aprendizaje.
 
+### Demostración de compra:
+
+![](https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/ejemplo%20compra2.gif)
+
 ### Librerías y dependencias utilizadas:
 
 ![](https://github.com/Lucas-Zam/RJ-proyecto-RL/blob/main/librerias%20y%20dependencias.png)
