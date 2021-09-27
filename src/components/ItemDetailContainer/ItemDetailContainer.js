@@ -16,33 +16,28 @@ export const ItemDetailContainer = () => {
 
     useEffect(()=>{
         setLoading(true)
-
         const db = getFirestore()
         const productos = db.collection('productos')
         const item = productos.doc(itemId)
-
         item.get()
             .then((doc) => {
             setItem( {...doc.data(), id: doc.id} )
             })
             .finally(()=> { setLoading(false)})
-
-
     }, [itemId, setLoading])
 
 
     return (
         <>
-                {loading ?                     
-                    <Loader/>
-                    /* <p className="texto-centrado margen10">Cargando...</p> */
+            {loading ?                     
+                <Loader/>
+            :
+                (item?.categoria?
+                    <ItemDetail {...item}/>
                 :
-                    (item?.categoria?
-                        <ItemDetail {...item}/>
-                    :
-                        <h2 className="texto-centrado margen40">Producto no encontrado</h2>
-                    )
-                }
+                    <h2 className="texto-centrado margen40">Producto no encontrado</h2>
+                )
+            }
         </>
     )
 }

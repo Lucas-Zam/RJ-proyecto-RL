@@ -11,8 +11,6 @@ import './styles/styles.scss'
 
 function App() {
 
-    // const [montar, setMontar] = useState(true)
-
 
     return (
         <>
@@ -47,7 +45,6 @@ function App() {
 
                         <Route path="*">
                             <h2 className="texto-centrado">404 page not found</h2>
-                            {/* <Redirect to ="/"/> */}
                         </Route>
 
                     </Switch>
@@ -58,9 +55,6 @@ function App() {
 
         </UIContextProvider>
       
-        
-            {/* <button onClick={()=> {setMontar(!montar)} }> Montar/Desmontar </button>
-                { montar && <ClickTracker/> } */}    
         </>
     );
 }

@@ -2,10 +2,7 @@ import React, { createContext } from 'react'
 import { useState } from "react"
 
 
-
 export const UIContext = createContext()
-
-
 
 
 export const UIContextProvider = ({children}) => {

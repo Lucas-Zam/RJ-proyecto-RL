@@ -38,13 +38,7 @@ export const Checkout = () => {
             if (values.email === values.email1) {
                 delete values.email1
 
-                //si validación de datos está ok:
-                //  se genera la orden de compra
-                
-                generarOrden(values, carrito, totalCarrito())
-                
-                    // si hay stock disponible se realiza la compra
-                    // luego se vacía el carrito
+                generarOrden(values, carrito, totalCarrito())                
                     .then( res => {
                         Swal.fire({//mensaje de éxito de compra
                             icon: 'success',
@@ -68,13 +62,13 @@ export const Checkout = () => {
                         setHayErr(1)
                     })
             }else{
-                Swal.fire({//mensaje de error en carga de datos
+                Swal.fire({//mensaje de error correos diferentes
                     icon: 'error',
                     title: 'Los Correos Electrónicos son distintos',
                     text: 'Revise su información'
                 })            
             }
-        }else{//si validación da datos está mal:
+        }else{//si validación da datos está mal
             Swal.fire({//mensaje de error en carga de datos
                 icon: 'error',
                 title: 'Campos inválidos',
@@ -87,9 +81,7 @@ export const Checkout = () => {
     return (
         <div>
             <h3 className="texto-centrado">Checkout</h3>
-            <hr/>
-            {/* <button onClick={() => generarOrden(buyer,carrito,totalCarrito())}>Generar orden</button> */}
-        
+            <hr/>       
             {!carrito.length ?
                 <Redirect to="/"/>
                 :
@@ -163,11 +155,3 @@ export const Checkout = () => {
         </div>
     )
 }
-                    // {/* // Swal.fire(//mensaje de error en carga de datos
-                    // //     icon: 'error',
-                    // //     title: 'NO HAY STOCK DE ALGUN PRODUCTO EN SU RESUMEN DE COMPRA.',
-                    // //     text: `(Cód:${iterar.codigo})   ${iterar.desc} (Stock disponible: ${iterar.stock})`,
-                    // //     allowEscapeKey: true,
-                    // //     allowEnterKey: true
-                    // // })         */}
-                
